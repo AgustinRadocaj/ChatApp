@@ -1,0 +1,9 @@
+.sidebar {
+    width: 20%;
+    float: left;
+}
+
+.listacontactos {
+    display: flex;
+    flex-direction: column;
+}
