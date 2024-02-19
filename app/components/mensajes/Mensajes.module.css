@@ -8,7 +8,7 @@
 
 .messageFromMe {
   align-self: flex-end;
-  background-color: red;
+  background-color: #fc7788;
   max-width: 50%;
   margin: 5px;
   border-radius: 5px;
@@ -17,9 +17,13 @@
 
 .messageFromOthers{
   align-self: flex-start;
-  background-color: blue;
+  background-color: #77aafc;
   max-width: 50%;
   margin: 5px;
   border-radius: 5px;
   padding: 8px;
+}
+
+.messageTime {
+  font-size: 12px;
 }

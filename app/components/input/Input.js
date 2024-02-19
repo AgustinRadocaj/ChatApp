@@ -12,7 +12,7 @@ const Input = ({ sendMessage, message, setMessage }) => {
         type='text'
         className={styles.input}
       />
-        <button className={styles.button} onClick={()=>{sendMessage()}}>ENVIAR</button>
+        <button className={styles.button} onClick={()=>{sendMessage()}} onKeyDown={"Enter"}>ENVIAR</button>
     </div>
   )
 }

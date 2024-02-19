@@ -3,6 +3,7 @@ import Card from "../card/Card";
 import { firestore } from "../../../lib/firebase"
 import { collection, onSnapshot, query, addDoc, serverTimestamp, where, getDocs } from "firebase/firestore";
 import styles from "./Contactos.module.css"
+import moment from 'moment'
 
 
 const Contactos= ({userData, setSelectedChat}) => {
@@ -83,11 +84,17 @@ const Contactos= ({userData, setSelectedChat}) => {
             setSelectedChat(data);
         }
 
+        const formatTime = (timestamp) => {
+            const date = timestamp?.toDate();
+            const momentDate = moment(date);
+            return momentDate.fromNow();
+          };
+
     return(
         <div className={styles.sidebar}>
-            <div>
-                <button onClick={()=> handleTabClick("Contactos")}>Contactos</button>
-                <button onClick={()=> handleTabClick("Chats")}>Chats</button>
+            <div className={styles.buttonContainer}>
+                <button className={styles.button} onClick={()=> handleTabClick("Contactos")}>Contactos</button>
+                <button className={styles.button} onClick={()=> handleTabClick("Chats")}>Chats</button>
             </div>
         
             <div>
@@ -100,7 +107,7 @@ const Contactos= ({userData, setSelectedChat}) => {
                             name={chatroom.usersData[chatroom.users.find((id) => id !== userData?.id)].name}
                             image={chatroom.usersData[chatroom.users.find((id) => id !== userData?.id)].profilePicture}
                             lastMessage={chatroom.lastMessage}
-                            time="una hora"
+                            time={formatTime(chatroom.timestamp)}
                             type={"chat"} />
                         </div>
                     ))}                    

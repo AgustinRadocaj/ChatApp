@@ -1,9 +1,19 @@
 .sidebar {
     width: 20%;
     float: left;
+    margin-left: 5px;
 }
 
 .listacontactos {
     display: flex;
     flex-direction: column;
+}
+
+.buttonContainer {
+    margin: 5px;
+}
+
+.button {
+    margin: 5px;
+    width:100px;
 }
