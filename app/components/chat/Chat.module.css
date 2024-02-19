@@ -1,0 +1,33 @@
+.mensajes {
+  width: 80%;
+  float: right;
+  padding: 10px 10px 0 10px;
+}
+.messageContainer {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Estilos para el mensaje cuando es del usuario */
+  .messageFromMe {
+    background-color: #3B82F6; /* Color de fondo del mensaje del usuario */
+    align-self: flex-end;
+  }
+  
+  /* Estilos para el mensaje cuando no es del usuario */
+  .messageFromOthers {
+    background-color: #34D399; /* Color de fondo del mensaje que no es del usuario */
+    align-self: flex-start;
+  }
+  
+  /* Estilos para el contenido del mensaje */
+  .messageContent {
+    color: red;
+  }
+  
+  /* Estilos para el tiempo del mensaje */
+  .messageTime {
+    font-size: 0.8rem;
+    color: #D1D5DB;
+  }

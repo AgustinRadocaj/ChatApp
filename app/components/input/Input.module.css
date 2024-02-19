@@ -1,0 +1,17 @@
+.container {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin-bottom: 10px;
+    width: 80%;
+}
+.input {
+    width: 75%;
+    margin-right: 40px;
+    height: 25px;
+}
+.button {
+    width: 100px;
+    height: 25px;
+    border-radius: 5px;
+}

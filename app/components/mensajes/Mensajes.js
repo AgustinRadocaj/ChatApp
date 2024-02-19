@@ -1,46 +1,31 @@
 import React from 'react'
 import moment from 'moment'
+import styles from "./Mensajes.module.css"
 
-const Mensajes = ({mensaje, user, otro}) => {
+const Mensajes = ({message, usuario, otro}) => {
 
-    const mensajeUser = mensaje.sender == user.id;
+    const mensajeUsuario = message.sender == usuario.id;
 
-    const formatTimeAgo = (timestamp) => {
+    const formatTime = (timestamp) => {
         const date = timestamp?.toDate();
         const momentDate = moment(date);
         return momentDate.fromNow();
       };
+    
+      
 
   return (
-     <div key={message.id} >
-      {/* Avatar on the left or right based on the sender */}
-      /*<div className={`w-10 h-10 ${isMessageFromMe ? 'ml-2 mr-2' : 'mr-2'}`}>
-        {isMessageFromMe && (
-          <img
-            className='w-full h-full object-cover rounded-full'
-            src={me.avatarUrl}
-            alt='Avatar'
-          />
-        )}
-        {!isMessageFromMe && (
-          <img
-            className='w-full h-full object-cover rounded-full'
-            src={other.avatarUrl}
-            alt='Avatar'
-          />
-        )}
-      </div>
-
-      {/* Message bubble on the right or left based on the sender */}
-      <div className={` text-white p-2 rounded-md ${isMessageFromMe ? 'bg-blue-500 self-end' : 'bg-[#19D39E] self-start'}`}>
-        {
-          message.image && <img src={message.image} className='max-h-60 w-60 mb-4' />
-        }
+    <div className={styles.container}>
+    <div className={` ${mensajeUsuario ? styles.messageFromMe : styles.messageFromOthers}`}>
+      <div className={styles.messageContent}>
         <p>{message.content}</p>
-        <div className='text-xs text-gray-200'>{formatTimeAgo(message.time)}</div>
+        <div className={styles.messageTime}>{formatTime(message.time)}</div>
       </div>
+    </div>
     </div>
   )
 }
 
 export default Mensajes
+
+    

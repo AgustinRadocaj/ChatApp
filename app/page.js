@@ -14,6 +14,7 @@ export default function Home() {
 
   const auth = getAuth(app);
   const [user, setUser] = useState(null);
+  const [selectedChat, setSelectedChat] = useState(null)
   const router = useRouter();
   
   useEffect(() => {
@@ -21,7 +22,7 @@ export default function Home() {
       if (user) {
         const userRef = doc(firestore, "usuarios", user.uid);
         const userSnap = await getDoc(userRef);
-        const userData = userSnap.data();
+        const userData = ({id: userSnap.id, ...userSnap.data()})
         setUser(userData);
       } else {
         setUser(null);
@@ -34,8 +35,8 @@ export default function Home() {
   return (
    <div>
     <section className={styles.topnav}><Nav/></section>
-    <section className={styles.contactos}><Contactos userData={user}/></section>
-    <section className={styles.chat}><Chat user={user}/></section>
+    <section className={styles.contactos}><Contactos userData={user} setSelectedChat={setSelectedChat}/></section>
+    <section className={styles.chat}><Chat user={user} selectedChat={selectedChat}/></section>
    </div>
   );
 }
