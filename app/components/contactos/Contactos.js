@@ -1,9 +1,7 @@
 import React,{useState, useEffect} from "react";
 import Card from "../card/Card";
-import { Firestore, app, firestore } from "../../../lib/firebase"
-import { collection, onSnapshot, query, addDoc, serverTimestamp, where, getDocs, QuerySnapshot } from "firebase/firestore";
-import { getAuth, signOut } from "firebase/auth";
-import { useRouter } from "next/navigation";
+import { firestore } from "../../../lib/firebase"
+import { collection, onSnapshot, query, addDoc, serverTimestamp, where, getDocs } from "firebase/firestore";
 import styles from "./Contactos.module.css"
 
 
@@ -12,8 +10,7 @@ const Contactos= ({userData, setSelectedChat}) => {
     const[activeTab, setActiveTab] = useState("");
     const[users, setUsers] = useState([]);
     const[userChat, setUserChat] = useState([]);
-    const auth = getAuth(app);
-    const router = useRouter();
+    
 
     const handleTabClick = (tab) => {
         setActiveTab(tab);

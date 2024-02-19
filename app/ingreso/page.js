@@ -54,10 +54,10 @@ const login = () => {
     }
 
         return (
-        <div>
+        <div className={styles.container}>
             <form onSubmit={handleSubmit} className={styles.form}>
-                <h1>Chat App Login</h1>
-                <div>
+                <h1 className={styles.titulo}>CHAT APP LOGIN</h1>
+                <div className={styles.data}>
                     <span>Email</span>
                     <input type="text" 
                     placeholder="Enter email" 
@@ -66,7 +66,7 @@ const login = () => {
                     onChange={(e)=>setEmail(e.target.value)}/>
                     {errors.email && <span className={styles.error}>{errors.email}</span>}
                 </div>
-                <div>
+                <div className={styles.data}>
                     <span>Password</span>
                     <input type="password" 
                     placeholder="Enter password" 
@@ -75,16 +75,16 @@ const login = () => {
                     onChange={(e)=>setPassword(e.target.value)}/>
                     {errors.password && <span className={styles.error}>{errors.password}</span>}
                 </div>
-                <div>
-                    <button type="submit">
+                <div className={styles.buttonContainer}>
+                    <button  type="submit">
                         {
                             loading ? <span className={styles.spinner}></span> :
-                            "Login"
+                            "LOGIN"
                         }
                     </button>
                 </div>
                 <p>No tenes una cuenta?
-                    <Link href="/register">Registro</Link>
+                    <Link className={styles.link} href="/register">Registro</Link>
                 </p>
             </form>
         </div>

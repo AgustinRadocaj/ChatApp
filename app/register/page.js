@@ -76,10 +76,10 @@ const register = () => {
         setLoading(false);
     }
         return (
-        <div>
+        <div className={styles.container}>
             <form onSubmit={handleSubmit} className={styles.form}>
-                <h1>Chat App Register</h1>
-                <div>
+                <h1 className={styles.titulo}>CHAT APP REGISTRO</h1>
+                <div className={styles.data}>
                     <span>Nombre</span>
                     <input type="text" 
                     placeholder="Enter name" 
@@ -88,7 +88,7 @@ const register = () => {
                     onChange={(e)=>setName(e.target.value)}/>
                     {errors.name && <span className={styles.error}>{errors.name}</span>}
                 </div>
-                <div>
+                <div className={styles.data}>
                     <span>Email</span>
                     <input type="text" 
                     placeholder="Enter email" 
@@ -97,7 +97,7 @@ const register = () => {
                     onChange={(e)=>setEmail(e.target.value)}/>
                     {errors.email && <span className={styles.error}>{errors.email}</span>}
                 </div>
-                <div>
+                <div className={styles.data}>
                     <span>Contraseña</span>
                     <input type="password" 
                     placeholder="Enter password" 
@@ -106,7 +106,7 @@ const register = () => {
                     onChange={(e)=>setPassword(e.target.value)}/>
                     {errors.password && <span className={styles.error}>{errors.password}</span>}
                 </div>
-                <div>
+                <div className={styles.data}>
                     <span>Confirmar contraseña</span>
                     <input type="password" 
                     placeholder="Confirm Password" 
@@ -115,7 +115,7 @@ const register = () => {
                     onChange={(e)=>setPassword2(e.target.value)}/>
                     {errors.password2 && <span className={styles.error}>{errors.password2}</span>}
                 </div>
-                <div>
+                <div className={styles.data}>
                     <span>Foto Perfil (opcional)</span>
                     <input
                     type="file"
@@ -124,16 +124,16 @@ const register = () => {
                     className={styles.input}
                     />
                 </div>
-                <div>
+                <div className={styles.buttonContainer}>
                     <button type="submit">
                         {
                             loading ? <span className={styles.spinner}></span> :
-                            "Register"
+                            "REGISTRARSE"
                         }
                     </button>
                 </div>
                 <p>Ya tenes una cuenta?
-                    <Link href="/login">Login</Link>
+                    <Link className={styles.link} href="/login">Login</Link>
                 </p>
             </form>
         </div>

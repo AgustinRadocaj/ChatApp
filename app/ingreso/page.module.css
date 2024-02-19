@@ -1,3 +1,45 @@
+.container {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  border: 1px solid red;
+  padding: 25px;
+  border-radius: 5px;
+  width: 400px;
+  height: 280px;
+}
+
+.titulo {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.data {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.buttonContainer {
+  margin-bottom: 10px;
+  justify-content: center;
+}
+
+.link{
+  margin-left: 10px;
+}
+.link:hover {
+  color: red;
+}
+
+.error{
+  color: red;
+  font-size: 13px;
+}
 .spinner {
     width: 56px;
     height: 56px;

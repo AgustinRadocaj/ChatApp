@@ -4,7 +4,6 @@ import {app, firestore} from "../lib/firebase";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { doc, getDoc } from "firebase/firestore";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
 import styles from "./page.module.css";
 import Nav from "./components/nav/Nav";
 import Contactos from "./components/contactos/Contactos";
@@ -26,6 +25,7 @@ export default function Home() {
         setUser(userData);
       } else {
         setUser(null);
+        router.push("/ingreso")
       }
     });
     return () => unsubscribe();
