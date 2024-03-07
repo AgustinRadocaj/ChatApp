@@ -8,7 +8,7 @@ import moment from 'moment'
 
 const Contactos= ({userData, setSelectedChat}) => {
 
-    const[activeTab, setActiveTab] = useState("");
+    const[activeTab, setActiveTab] = useState("Contactos");
     const[users, setUsers] = useState([]);
     const[userChat, setUserChat] = useState([]);
     

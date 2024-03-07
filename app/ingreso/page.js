@@ -55,37 +55,32 @@ const login = () => {
 
         return (
         <div className={styles.container}>
-            <form onSubmit={handleSubmit} className={styles.form}>
-                <h1 className={styles.titulo}>CHAT APP LOGIN</h1>
+        <div className={styles.left}>
+            <h3 className={styles.bienvenido}>Bienvenido!</h3>
+            <p className={styles.texto}>Si no tenes cuenta podes registrarte</p>
+            <Link href="/register">
+            <button className={styles.buttonleft}>REGISTRO</button>
+            </Link>
+        </div>
+            <form onSubmit={handleSubmit} className={styles.formContainer}>
+                <h1 className={styles.titulo}>Login</h1>
                 <div className={styles.data}>
-                    <span>Email</span>
-                    <input type="text" 
-                    placeholder="Enter email" 
+                    <span className={styles.span}>Email</span>
+                    <input type="text"                    
                     className={styles.input} 
                     value={email} 
                     onChange={(e)=>setEmail(e.target.value)}/>
                     {errors.email && <span className={styles.error}>{errors.email}</span>}
                 </div>
                 <div className={styles.data}>
-                    <span>Password</span>
+                    <span className={styles.span}>Password</span>
                     <input type="password" 
-                    placeholder="Enter password" 
                     className={styles.input}  
                     value={password} 
                     onChange={(e)=>setPassword(e.target.value)}/>
                     {errors.password && <span className={styles.error}>{errors.password}</span>}
                 </div>
-                <div className={styles.buttonContainer}>
-                    <button  type="submit">
-                        {
-                            loading ? <span className={styles.spinner}></span> :
-                            "LOGIN"
-                        }
-                    </button>
-                </div>
-                <p>No tenes una cuenta?
-                    <Link className={styles.link} href="/register">Registro</Link>
-                </p>
+                <button type="submit" className={styles.button}>LOGIN</button>
             </form>
         </div>
     )

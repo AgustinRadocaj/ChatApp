@@ -76,68 +76,69 @@ const register = () => {
         setLoading(false);
     }
         return (
-        <div className={styles.container}>
-            <form onSubmit={handleSubmit} className={styles.form}>
-                <h1 className={styles.titulo}>CHAT APP REGISTRO</h1>
+    <div className={styles.container}>
+        <div className={styles.left}>
+            <h3 className={styles.bienvenido}>Bienvenido!</h3>
+            <p className={styles.texto}>Si ya tenes cuenta podes ingresar</p>
+            <Link href="/ingreso">
+            <button className={styles.buttonleft}>LOGIN</button>
+            </Link>
+        </div>
+            <form onSubmit={handleSubmit} className={styles.formContainer}>
+                <h1 className={styles.titulo}>REGISTRO</h1>
                 <div className={styles.data}>
-                    <span>Nombre</span>
-                    <input type="text" 
-                    placeholder="Enter name" 
+                    <span className={styles.span}>Nombre</span>
+                    <input type="text"  
                     className={styles.input} 
                     value={name} 
                     onChange={(e)=>setName(e.target.value)}/>
                     {errors.name && <span className={styles.error}>{errors.name}</span>}
                 </div>
                 <div className={styles.data}>
-                    <span>Email</span>
-                    <input type="text" 
-                    placeholder="Enter email" 
+                    <span className={styles.span}>Email</span>
+                    <input type="text"  
                     className={styles.input} 
                     value={email} 
                     onChange={(e)=>setEmail(e.target.value)}/>
                     {errors.email && <span className={styles.error}>{errors.email}</span>}
                 </div>
                 <div className={styles.data}>
-                    <span>Contraseña</span>
-                    <input type="password" 
-                    placeholder="Enter password" 
+                    <span className={styles.span}>Contraseña</span>
+                    <input type="password"  
                     className={styles.input}  
                     value={password} 
                     onChange={(e)=>setPassword(e.target.value)}/>
                     {errors.password && <span className={styles.error}>{errors.password}</span>}
                 </div>
                 <div className={styles.data}>
-                    <span>Confirmar contraseña</span>
-                    <input type="password" 
-                    placeholder="Confirm Password" 
+                    <span className={styles.span}>Confirmar contraseña</span>
+                    <input type="password"  
                     className={styles.input}  
                     value={password2} 
                     onChange={(e)=>setPassword2(e.target.value)}/>
                     {errors.password2 && <span className={styles.error}>{errors.password2}</span>}
                 </div>
                 <div className={styles.data}>
-                    <span>Foto Perfil (opcional)</span>
+                    <span className={styles.span}>Foto Perfil (opcional)</span>
+                    <label htmlFor="fileInput" className={styles.customFileInput}>
+                    Select Image
+                    </label>
                     <input
-                    type="file"
-                    accept="image/*"
-                    onChange={pictureHandler}
-                    className={styles.input}
+                        id="fileInput"
+                        type="file"
+                        accept="image/*"
+                        onChange={pictureHandler}
+                        className={styles.input}
+                        style={{ display: 'none' }} // Hide the default input
                     />
-                </div>
-                <div className={styles.buttonContainer}>
-                    <button type="submit">
-                        {
-                            loading ? <span className={styles.spinner}></span> :
-                            "REGISTRARSE"
-                        }
-                    </button>
-                </div>
-                <p>Ya tenes una cuenta?
-                    <Link className={styles.link} href="/login">Login</Link>
-                </p>
+                    </div>
+                    <button type="submit" className={styles.button}>REGISTRARME</button>
             </form>
         </div>
     )
 }
 
 export default register;
+                
+
+                
