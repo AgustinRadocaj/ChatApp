@@ -21,7 +21,7 @@ const Nav = () => {
     return(
         <div className={styles.container}>
             <h1 className={styles.titulo}>ChatApp</h1>
-            <button onClick={logoutClick}className={styles.button}>Logout</button>
+            <button onClick={logoutClick}className={styles.button}><b>LOGOUT</b></button>
         </div>
     )
 }

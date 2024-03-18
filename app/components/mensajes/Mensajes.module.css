@@ -1,14 +1,12 @@
 .container {
-  
   height:80%;
   display: flex;
   flex-direction: column-reverse;
-  
 }
 
 .messageFromMe {
   align-self: flex-end;
-  background-color: #fc7788;
+  background-color: #196fbf;
   max-width: 50%;
   margin: 5px;
   border-radius: 5px;
@@ -17,7 +15,7 @@
 
 .messageFromOthers{
   align-self: flex-start;
-  background-color: #77aafc;
+  background-color: #F4D35E;
   max-width: 50%;
   margin: 5px;
   border-radius: 5px;
@@ -25,5 +23,5 @@
 }
 
 .messageTime {
-  font-size: 12px;
+  font-size: 10px;
 }

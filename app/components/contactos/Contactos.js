@@ -93,13 +93,13 @@ const Contactos= ({userData, setSelectedChat}) => {
     return(
         <div className={styles.sidebar}>
             <div className={styles.buttonContainer}>
-                <button className={styles.button} onClick={()=> handleTabClick("Contactos")}>Contactos</button>
-                <button className={styles.button} onClick={()=> handleTabClick("Chats")}>Chats</button>
+                <button className={styles.button} onClick={()=> handleTabClick("Contactos")}><b>Contactos</b></button>
+                <button className={styles.button} onClick={()=> handleTabClick("Chats")}><b>Chats</b></button>
             </div>
         
             <div>
                 {activeTab === "Chats" && (<>
-                    <h1>Chats</h1>
+                    <h1 className={styles.tab}>Chats</h1>
                     <div className={styles.listacontactos}>
                     {userChat.map((chatroom) => (
                         <div key={chatroom.id} onClick={() => { openChat(chatroom) }}>
@@ -117,7 +117,7 @@ const Contactos= ({userData, setSelectedChat}) => {
             </div>
             <div>
                 {activeTab === "Contactos" && (<>
-                    <h1>Contactos</h1>
+                    <h1 className={styles.tab}>Contactos</h1>
                     <div className={styles.listacontactos}>
                     { users.map((user) => {
                         

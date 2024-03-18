@@ -1,11 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap');
+
 .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
     padding: 10px;
-    background-color: #333;
-    color: #fff;
+    background-color: #0D3B66;
+    color: #FAF0CA;
 }
 
 .titulo {
@@ -13,10 +15,13 @@
 }
 
 .button {
-    background-color: #fff;
-    color: #333;
-    padding: 5px 15px;
+    background-color: #FAF0CA;
+    color: #0D3B66;
     border: none;
-    border-radius: 5px;
+    border-radius: 15px;
+    margin-right: 20px;
+    height: 30px;
+    width: 85px;
     cursor: pointer;
+    font-family: 'Ubuntu';
 }
